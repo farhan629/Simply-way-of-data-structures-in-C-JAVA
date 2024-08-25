@@ -1,0 +1,33 @@
+#include<stdio.h>
+#include<conio.h>
+int a[10],head=0,tail=0;
+void enqueue(int num)
+{
+    if(tail==0){
+        a[head]=num;
+        tail++;
+    }else{
+        a[tail]=num;
+        tail++;
+    }
+}
+void display(){
+    for(int i=head;i<tail;i++){
+        printf("%d \t",a[i]);
+    }
+    printf("\nlast element in queue:%d",a[tail-1]);
+}
+void dequeue(){
+    printf("%d is dequeue\n",a[head]);
+    a[head]=0;
+    head++;
+}
+void main(){
+    enqueue(40);
+    enqueue(50);
+    enqueue(60);
+    enqueue(70);
+    enqueue(100);
+    dequeue();
+    display();
+}
