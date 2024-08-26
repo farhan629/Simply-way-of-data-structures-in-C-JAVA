@@ -1,0 +1,40 @@
+#include<stdio.h>
+#include<conio.h>
+#define Size 5
+int a[Size],values=0;
+void insert(int num){
+    a[values]=num;
+    values++;
+}
+void display(){
+    for(int i=0;i<Size;i++){
+        printf("%d\t",a[i]);
+    }
+}
+void insertpos(int num,int pos){
+    printf("orginal array\n");
+    for(int i=Size;pos<=i;i--){
+        a[i]=a[i-1];
+    }
+    a[pos]=num;
+    values++;
+}
+void delete(int pos){
+    for(int i=pos;i<Size;i++){
+        a[i]=a[i+1];
+    }
+    values--;
+    printf("\n after deleting the %d nd pos\n",pos);
+    for(int i=0;i<Size-1;i++){
+        printf("%d\t",a[i]);
+    }
+}
+void main(){
+    insert(9);
+    insert(11);
+    insert(12);
+    insert(13);
+    insertpos(40,1);
+    display();
+    delete(2);
+}
