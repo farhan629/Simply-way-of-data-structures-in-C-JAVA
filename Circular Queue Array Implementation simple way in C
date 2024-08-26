@@ -1,0 +1,51 @@
+#include<stdio.h>
+#include<conio.h>
+#define Size 5
+int front=0,rear=0,a[Size];
+void enqueue(int  num){
+    if(a[rear]==0){
+    if(rear==0){
+        a[rear]=num;
+        rear=(rear+1)%Size;
+    }
+    else{
+        a[rear]=num;
+        rear=(rear+1)%Size;   
+        }
+}
+    else{
+    printf("\n%d we could not insert the value",num);
+}
+}
+
+void display(){
+    printf("\n");
+    for(int i=0;i<Size;i++){
+        printf("%d\t",a[i]);
+    }
+}
+void dequeu(){
+    printf("\n%d is deleted",a[front]);
+    a[front]=0;
+    front=(front+1)%Size;
+}
+void main(){
+    enqueue(10);
+    enqueue(30);
+    enqueue(10);
+    enqueue(11);
+    enqueue(30);
+    dequeu();
+    enqueue(40);
+    dequeu();
+    enqueue(50);
+    dequeu();
+    enqueue(60);
+    dequeu();
+    enqueue(70);
+    dequeu();
+    enqueue(90);
+    dequeu();
+    enqueue(100);
+    display();
+}
