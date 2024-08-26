@@ -1,0 +1,44 @@
+#include<stdio.h>
+#include<conio.h>
+#define Size 5
+void asc(int a[]){
+    printf("\nAscending order:\n");
+    for(int i=0;i<Size;i++){
+        for(int j=i+1;j<Size;j++){
+            if(a[i]>a[j]){
+                int temp=a[i];
+                a[i]=a[j];
+                a[j]=temp;
+            }
+        }
+        
+    }
+    for(int i=0;i<Size;i++){
+        printf("%d\t",a[i]);
+    }
+}
+void des(int a[]){
+    printf("\nAscending order:\n");
+    for(int i=0;i<Size;i++){
+        for(int j=i+1;j<Size;j++){
+            if(a[i]<a[j]){
+                int temp=a[i];
+                a[i]=a[j];
+                a[j]=temp;
+            }
+        }
+        
+    }
+    for(int i=0;i<Size;i++){
+        printf("%d\t",a[i]);
+    }
+}
+void main(){
+    int a[Size];
+    printf("Enter 5 values:");
+    for(int i=0;i<Size;i++){
+        scanf("%d",&a[i]);
+    }
+    asc(a);
+    des(a);
+}
