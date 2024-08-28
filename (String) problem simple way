@@ -1,0 +1,151 @@
+/*
+
+#include <stdio.h>
+int main()
+{
+    char a[]="Welcome, w3resource";
+    printf("%s",a);
+
+    return 0;
+}
+*/
+
+/*#include<stdio.h>
+int main(){
+    char a[]="w3resource.com";
+    int count=0;
+    for(int i=0;i<sizeof(a);i++){
+        count++;
+    }
+    printf("%d",count);
+}
+*/
+/*
+#include<stdio.h>
+#include<conio.h>
+int main(){
+    char a[]="w3resource.com";
+    for(int i=0;i<sizeof(a);i++){
+        printf("%c\t",a[i]);
+    }
+}
+
+
+*/
+
+/*
+#include<stdio.h>
+#include<conio.h>
+int main(){
+    char a[]="w3resource.com";
+    for(int i=sizeof(a);i>=0;i--){
+        printf("%c\t",a[i]);
+    }
+}
+
+*/
+
+/*
+#include<stdio.h>
+#include<conio.h>
+int main(){
+    char a[]="A walk in the park on a sunny day brings peace, rejuvenation, and a chance to connect with nature’s beauty";
+    int count=0;
+    for(int i=0;i<sizeof(a);i++){
+        if(a[i]==' '){
+            count++;
+        }
+            
+    }
+    
+    printf("\nTotal number of words in the string is :%d",count+1);
+}
+*/
+
+/*
+#include<stdio.h>
+#include<conio.h>
+#include<string.h>
+int main(){
+    char a[10]="aabbcce";
+    char b[10]="aabbcce";
+    int count=0;
+    for(int i=0;i<strlen(a>b?a:b);i++){
+    if(a[i]==b[i]){
+        count++;
+    }
+    else{
+        count++;
+    }
+}
+    if(count==strlen(a)){
+        printf("equale");
+    }else{
+        printf("not equale");
+    }
+}
+*/
+
+
+
+/*
+#include<stdio.h>
+#include<conio.h>
+#include<string.h>
+void main(){
+    char a[]="This is a string to be copied";
+    char  b[100];
+    int count=0;
+    for(int i=0;i<strlen(a) ;i++){
+        b[i]=a[i];
+        count++;
+    }
+    printf("The First string is :%s",a);
+    printf("\nThe second string is :%s",b);
+    printf("\nNumber of characters copied :%d",count);
+}
+
+*/
+/*
+#include<stdio.h>
+#include<conio.h>
+#include<string.h>
+void main(){
+    char a[30]="Welcome to w3resource.com";
+    int count=0;
+    int cha=0;
+    for(int i=0;i<strlen(a);i++){if(a[i]!=' '){
+        if(a[i]=='a'||a[i]=='e'||a[i]=='i'||a[i]=='o'||a[i]=='u'||a[i]=='A'||a[i]=='E'||a[i]=='I'|| a[i]=='O'||a[i]=='U'){
+            count++;
+        }
+        else{
+            cha++;
+        }
+    }
+    
+    
+    }
+    printf("The total number of vowel in the string is :%d",count);
+    printf("\nThe total number of consonant in the string is :%d",cha);
+}
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
