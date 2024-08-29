@@ -1,0 +1,70 @@
+// #include<stdio.h>
+// #include<conio.h>
+// void main(){
+//     int a=100;
+//     int *p=&a;
+//     int **p1=&p;
+//     printf("%d\n",*p);
+//         printf("%d",**p1);
+
+// }
+
+
+// #include<stdio.h>
+// #include<conio.h>
+// void incrt(int *p){
+//     (*p)++;
+// }
+// void main()
+// {
+//     int a=100;
+//     incrt(&a);
+//     printf("%d",a);
+// }
+
+
+// #include<stdio.h>
+// #include<conio.h>
+// void swap(int *p1,int *p2){
+//     int temp=*p1;
+//     *p1=*p2;
+//     *p2=temp;
+// }
+
+// void main(){
+//     int a,b;
+//     a=100;
+//     b=200;
+//     swap(&a,&b);
+//     printf("%d %d",a,b);
+// }
+
+
+
+// #include<stdio.h>
+// #include<conio.h>
+// void main(){
+//     int a=10;
+//     int *b=&a;
+//     (*b)++;
+//     printf("%d",a);
+// }
+
+
+// #include<stdio.h>
+// #include<conio.h>
+// int*  getarry(){
+//     static int a[]={1,2,3,3,4};
+//     return a;
+// }
+// void main(){
+//     int *p=getarry();
+//     for(int i=0;i<5;i++){
+//         printf("%d\n",(p+i));
+//     }
+// }
+
+
+
+
+
