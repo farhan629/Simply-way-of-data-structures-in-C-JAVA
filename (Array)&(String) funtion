@@ -1,0 +1,25 @@
+
+/*
+#include<stdio.h>
+#include<conio.h>
+char *print(char num[]){
+    return num;
+}
+*/
+/*
+void main(){
+    int a[]={1,2,3,4,5};
+    int l=sizeof(a)/sizeof(a[0]);
+    int *p=print(a);
+    for(int i=0;i<l;i++){
+        printf("%d",p[i]);
+    }
+}
+*/
+/*
+
+void main(){
+    char a[]="farhan";
+    char *p=print(a);
+    printf("%s",p);
+}
