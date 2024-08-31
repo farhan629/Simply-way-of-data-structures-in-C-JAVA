@@ -1,0 +1,51 @@
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+struct node{
+    int data;
+    struct node *next;
+}*head,*tail;
+
+void insert(int num){
+    struct node *newnode=malloc(sizeof(struct node));
+    newnode->data=num;
+    if(head==NULL){
+        head=newnode;
+        tail=newnode;
+    }else{
+        tail->next=newnode;
+        tail=newnode;
+    }
+    
+}
+void display(){
+    struct node *temp=head;
+    while(temp!=NULL){
+        printf("%d\t",temp->data);
+        temp=temp->next;
+    }
+    
+}
+void pop(){
+    struct node *temp=head;
+    while(temp!=NULL){
+    if(temp->next->next==NULL){
+        free(temp->next->next);
+        tail=temp;
+        tail->next=NULL;
+    }
+    temp=temp->next;
+    }
+
+}
+void main(){
+    printf("Orignal stack\n");
+    insert(3);
+    insert(9);
+    insert(27);
+    insert(54);
+    display();
+    pop();
+    printf("\nafter pop up\n");
+    display();
+}
