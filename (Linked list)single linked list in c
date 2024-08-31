@@ -1,0 +1,86 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<conio.h>
+struct node{
+    int data;
+    struct node *next;
+    
+}*head ,*tail;
+int count=0;
+void insert(int num){
+struct node *newNode=malloc(sizeof(struct node));
+newNode->data=num;
+if(head==NULL){
+    head=newNode;
+    tail=newNode;
+}else{
+    tail->next=newNode;
+    tail=newNode;
+}
+    
+    
+}
+
+void display(){
+    struct node *temp;
+    temp=head;
+    while(temp != NULL){
+        printf("%d\t",temp->data);
+        temp=temp->next;
+        count++;
+    }
+}
+void insertpos(int num,int pos){
+    struct node *temp,*newnode=malloc(sizeof(struct node));
+    newnode->data=num;
+    temp=head;
+    while(temp!=NULL){
+        if(temp->data==pos){
+           newnode->next=temp->next;
+        temp->next=newnode;
+        }
+        temp=temp->next;
+    }
+    
+}
+void inserthead(int num){
+    struct node *newnode=malloc(sizeof(struct node));
+    newnode->data=num;
+    newnode->next=head;
+    head=newnode;
+}
+void delete(int num) {
+    struct node *temp = head, *prev = NULL;
+
+    if (temp != NULL && temp->data == num) {
+        head = temp->next; 
+        free(temp);          
+        return;
+    }
+
+    while (temp != NULL && temp->data != num) {
+        prev = temp;
+        temp = temp->next;
+    }
+    prev->next = temp->next;
+
+    free(temp); 
+}
+void main(){
+    insert(1);
+    insert(2);
+    insert(3);
+    display();    
+    printf("\nAfter insert position:\n");
+    insertpos(5,2);
+    insertpos(9,1);
+    insertpos(7,3);
+    inserthead(10);
+    inserthead(11);
+    display();
+    delete(3);
+    delete(11);
+    printf("\nAfter delection\n");
+    display();
+
+}
