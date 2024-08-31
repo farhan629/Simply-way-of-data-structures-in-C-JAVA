@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include<stdbool.h>
+bool binarysearch(int num[],int beg,int end,int val){
+    if (beg > end) {
+        return false;  // Base case: value not found
+    }
+    int mid=(beg+end)/2;
+    if(num[mid]==val){
+        return true;
+    }
+    if(val>num[mid]){
+        beg=mid+1;
+        return binarysearch(num,beg,end,val);
+    }
+    if(val<num[mid]){
+        end=mid-1;
+        return binarysearch(num,beg,end,val);
+
+    }
+
+    
+}
+int main()
+{
+    int a[]={8,2,3,4,5,6,7};
+    int l=sizeof(a)/sizeof(a[0]);
+    for(int i=0;i<l;i++){
+        for(int j=i+1;j<l;j++){
+            if(a[i]>a[j]){
+                int temp=a[i];
+                a[i]=a[j];
+                a[j]=temp;
+            }
+        }
+    }
+
+   bool b= binarysearch(a,0,l-1,1);
+    if(b==true){
+        printf("found");
+    }else{
+        printf("not found");
+    }
+}
