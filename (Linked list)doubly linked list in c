@@ -1,0 +1,109 @@
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+struct node{
+    struct node *front;
+    int data;
+    struct node *next;
+}*head,*tail;
+void insert(int num){
+    struct node *newnode=malloc(sizeof(struct node));
+    newnode->data=num;
+    if(head==NULL){
+        head=newnode;
+        tail=newnode;
+    }else{
+        newnode->front=tail;
+        tail->next=newnode;
+        tail=newnode;
+        
+    }
+}
+void insertpos(int num,int pos){
+    struct node *temp=head;
+        struct node *newnode=malloc(sizeof(struct node));
+        newnode->data=num;
+
+    while(temp !=NULL){
+        if(temp->data==pos){
+            newnode->front=temp;
+            newnode->next=temp->next;
+            temp->next=newnode;
+            newnode->next->front=newnode;
+        }
+        temp=temp->next;
+    }
+}
+void display(){
+    printf("\n");
+    struct node *temp;
+    temp=head;
+    while(temp!=NULL){
+        printf("%d\t",temp->data);
+        temp=temp->next;
+    }
+}
+void inserthead(int num){
+    struct node *newnode=malloc(sizeof(struct node));
+    newnode->data=num;
+    newnode->next=head;
+    head->front=newnode;
+    head=newnode;
+}
+void revdisplay(){
+    printf("\n");
+    struct node *temp;
+    temp=tail;
+    while(temp!=NULL){
+        printf("%d\t",temp->data);
+        temp=temp->front;
+    }
+}
+void delete(int num){
+    struct node *temp=head,*prev;
+      if (temp != NULL && temp->data == num) {
+        head = temp->next;
+        if (head != NULL) {
+            head->front = NULL;
+        }
+        free(temp);  
+        return; }
+    while(temp!=NULL && temp->data!=num){
+        prev=temp;
+        temp=temp->next;
+    }
+    prev->next=temp->next;
+    temp->next->front=temp->front;
+    free(temp);
+    
+}
+void main(){
+    insert(9);
+    insert(8);
+    insert(10);
+    insert(11);
+    printf("\nafter inserting linkedlist");
+    display();
+    printf("\nrev the linkedlist");
+    revdisplay();
+    insertpos(1,8);
+    insertpos(2,8);
+    printf("\nafter inserting linkedlist");
+    display();
+    printf("\nrev the linkedlist");
+    revdisplay();
+    inserthead(100);
+    display();
+    printf("\nbefor deleteing linkedlist");
+    display();
+    delete(100);
+    printf("\nafter deleteing linkedlist");
+    display();
+    
+    printf("\nhead:%d",head->data);
+    printf("\ntail:%d",tail->data);
+    
+
+    
+    
+}
