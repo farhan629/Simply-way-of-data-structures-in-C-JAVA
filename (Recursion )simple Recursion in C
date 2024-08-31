@@ -1,0 +1,54 @@
+
+//Basicrecursion
+/*
+#include<stdio.h>
+#include<conio.h>
+int revrse(int num){
+    if(num==0)
+        return 0;
+    printf("%d\t",num);
+    return revrse(num-1);
+    
+}
+
+void main(){
+    int a=revrse(10);
+    printf("%d",a);
+}
+*/
+
+//factorial
+
+/* 
+#include<stdio.h>
+#include<conio.h>
+int factorial(int num){
+    int sum=1;
+    if(num <=1)
+        return 1;
+    printf("%d\t",num);
+    return num*factorial(num-1); //5*4 20*3 60*2 return
+}
+void main(){
+    int a=5;
+    int ans=factorial(a);
+    printf("factorial:%d is %d",a,ans);
+}
+*/
+
+
+//rev the string
+/*
+#include<stdio.h>
+void reverse(char num[], int length) {
+    if(length < 0)
+        return;
+    printf("%c", num[length]);
+    reverse(num, length - 1);
+}
+
+void main() {
+    char a[] = "farhan";
+    int len = strlen(a);
+    reverse(a, len - 1);
+} */
