@@ -1,0 +1,36 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+struct node {
+    int data;
+    struct node *right, *left;
+};
+
+// Function to create a new node
+struct node *newnode(int num) {
+    struct node *node = (struct node *)malloc(sizeof(struct node));
+    node->data = num;
+    node->left = node->right = NULL;
+    return node;
+}
+
+// Function to display the tree with child information
+void display(struct node *root, char* childType) {
+    if (root != NULL) {
+        printf("%d (%s child)\n", root->data, childType);
+        display(root->left, "left");
+        display(root->right, "right");
+    }
+}
+
+int main() {
+    struct node *root = newnode(9);
+    root->left = newnode(8);
+    root->right = newnode(10);
+    root->left->right = newnode(80);
+
+    // Display the tree structure with child information
+    display(root, "root");
+
+    return 0;
+}
