@@ -1,0 +1,36 @@
+#include<stdio.h>
+#include<stdlib.h>
+struct node{
+    int data;
+    struct node *right,*left;
+}*root;
+struct node *newnode(int num){
+    struct node *new=malloc(sizeof(struct node));
+    new->data=num;
+    new->left=new->right=NULL;
+}
+void displayleft(){
+    struct node *temp=root;
+    printf("LEFT CHILD:\t");
+    while(temp!=NULL){
+        printf("%d\t",temp->data);
+        temp=temp->left;
+    }
+}void displayright(){
+    struct node *temp=root;
+    printf("RIGHT CHILD:\t");
+    while(temp!=NULL){
+        printf("%d\t",temp->data);
+        temp=temp->right;
+    }
+}
+void main(){
+    root = newnode(9);
+    root->left = newnode(10);
+    root->right = newnode(11);
+    root->left->left = newnode(7);
+    root->right->right = newnode(15);
+   displayleft();
+   printf("\n");
+   displayright();
+}
