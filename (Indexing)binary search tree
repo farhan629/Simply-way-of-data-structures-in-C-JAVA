@@ -1,0 +1,54 @@
+#include <stdio.h>
+#include<stdlib.h>
+struct node{
+    int data;
+    struct node *left,*right;
+}*root;
+void insert(int num){
+    struct node *newNode = malloc(sizeof(struct node));
+    newNode->data = num;
+    newNode->left = newNode->right = NULL;
+
+    if(root == NULL){
+        root = newNode;
+    }
+    else{
+        struct node *current = root;
+        struct node *parent = NULL;
+
+        while(1){
+            parent = current;
+            if(num < current->data){
+                current = current->left;
+                if(current == NULL){
+                    parent->left = newNode;
+                    break;
+                }
+            }
+            else{
+                current = current->right;
+                if(current == NULL){
+                    parent->right = newNode;
+                    break;
+                }
+            }
+        }
+    }
+}
+
+void display(struct node *root){
+    if(root != NULL){
+        display(root->left);
+        printf("%d ", root->data);
+        display(root->right);
+    }
+}
+void main()
+{
+    insert(7);
+    insert(4);
+    insert(5);
+    insert(9);
+    insert(8);
+    display(root);
+}
