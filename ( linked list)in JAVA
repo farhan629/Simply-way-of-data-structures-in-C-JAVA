@@ -1,0 +1,40 @@
+class Node {
+    int data;
+    Node next;
+}
+
+class LinkedList {
+    Node head, tail;
+
+    void ins(int data) {
+        // Create a new node for every insertion
+        Node n = new Node();
+        n.data = data;
+        n.next = null;  // New node will always point to null
+
+        if (head == null) {
+            head = n;
+            tail = n;
+        } else {
+            tail.next = n;  // Link the current tail node to the new node
+            tail = n;       // Update the tail reference to the new node
+        }
+    }
+
+    void disp() {
+        Node temp = head;
+        while (temp != null) {
+            System.out.println(temp.data);  // Print the data of the current node
+            temp = temp.next;               // Move to the next node
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        LinkedList l = new LinkedList();
+        l.ins(18);
+        l.ins(9);
+        l.disp();  // Display the elements of the list
+    }
+}
