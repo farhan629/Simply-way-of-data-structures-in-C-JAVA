@@ -1,0 +1,51 @@
+import java.util.*;
+
+class Main {
+    static int a[] = new int[5];
+    static int l = 3; // Adjusted length according to initial elements
+
+    static void display(int[] a) {
+        System.out.println("Displaying the queue:");
+        for (int i = 0; i < l; i++) {  // Iterate only up to current length `l`
+            System.out.println(a[i]);
+        }
+    }
+    static void insert(int []a,int val){
+        a[l]=val;
+        l++;
+        
+    }
+    static void pop(int a[]) {
+        for (int i = 0; i < l - 1; i++) {
+            a[i] = a[i + 1];
+        }
+        l--; // Decrease length after popping
+        System.out.println("Displaying the queue after pop:");
+        display(a);
+    }
+
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        // Proper initialization of array
+        a[0] = 1;
+        a[1] = 2;
+        a[2] = 3;
+
+        display(a);
+        while(true){
+        System.out.println("Enter 1 to pop");
+
+        int p = sc.nextInt();
+        switch (p) {
+            case 1:
+                pop(a);
+                pop(a);
+                break;  // Add break to avoid fall-through
+            case 2:
+                insert(a,5);
+                break;
+            default:
+                break;
+        }}
+    }
+}
