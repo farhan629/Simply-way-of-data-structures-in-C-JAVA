@@ -1,0 +1,66 @@
+import java.util.*;
+
+class Main {
+    static int a[] = new int[5]; // Stack array
+    static int l = 3; // Top of stack (starts at 3 because we have 3 initial elements)
+
+    // Display stack elements in reverse (LIFO order)
+    static void display(int[] a) {
+        System.out.println("Displaying the stack:");
+        for (int i = l - 1; i >= 0; i--) {  // Start from top (l-1) and go to bottom
+            System.out.println(a[i]);
+        }
+    }
+
+    // Push an element onto the stack
+    static void insert(int[] a, int val) {
+        if (l >= a.length) {
+            System.out.println("Stack is full, cannot insert!");
+        } else {
+            a[l] = val;
+            l++;
+            display(a);
+        }
+    }
+
+    // Pop an element from the stack
+    static void pop(int[] a) {
+        if (l == 0) {
+            System.out.println("Stack is empty, cannot pop!");
+        } else {
+            l--;  // Decrease the top of the stack
+            a[l] = 0;  // Clear the value (optional)
+            System.out.println("Displaying the stack after pop:");
+            display(a);
+        }
+    }
+
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+
+        // Initial stack setup
+        a[0] = 1;
+        a[1] = 2;
+        a[2] = 3;
+
+        display(a);
+
+        while (true) {
+            System.out.println("Enter 1 to pop, 2 to push:");
+            int p = sc.nextInt();
+            switch (p) {
+                case 1:
+                    pop(a);
+                    break;
+                case 2:
+                    System.out.println("Enter value to push:");
+                    int val = sc.nextInt();
+                    insert(a, val);
+                    break;
+                default:
+                    System.out.println("Invalid option.");
+                    break;
+            }
+        }
+    }
+}
