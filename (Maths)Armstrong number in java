@@ -1,0 +1,24 @@
+class Main{
+    public static void main(String args[]){
+        int x=1634;
+        int count=0;
+        int n=x;
+        int temp=x;
+        int ans=0;
+        while(n>0){
+            count++;
+            n/=10;
+        }
+        while(temp>0){
+            int rem=temp%10;
+            int sqr=1;
+            for(int i=0;i<count;i++){
+                sqr*=rem;
+            }
+            ans+=sqr;
+            temp/=10;
+        }
+        System.out.print(ans==x?"it is an armstrong  Number ":"it is not an armstrong number");
+        
+    }
+}
