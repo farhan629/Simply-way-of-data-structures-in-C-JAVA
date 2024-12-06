@@ -1,0 +1,41 @@
+import java.util.*;
+//method 1
+
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc=new Scanner(System.in);
+	    int n=sc.nextInt();
+	    ArrayList<Integer> arr=new ArrayList<Integer>();
+		for(int i=1;i<n;i++)
+		{
+		    if(n%i==0)
+		    {
+		        arr.add(i);
+		    }
+		}
+		System.out.print(arr);
+	}
+	
+}
+
+//method 2
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc=new Scanner(System.in);
+	    int n=sc.nextInt();
+	    ArrayList<Integer> arr=new ArrayList<Integer>();
+		for(int i=1;i<Math.sqrt(n);i++)
+		{
+		    if(n%i==0)
+		    {
+		        arr.add(i);
+		        arr.add(n/i);
+		    }
+		}
+		Collections.sort(arr);  
+		System.out.print(arr);
+	}
+	
+}
