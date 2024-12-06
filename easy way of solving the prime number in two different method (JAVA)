@@ -1,0 +1,62 @@
+import java.util.*;
+
+
+
+//method 1
+class Main{
+    public static void main(String arg[]){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        if(n==1)
+            System.out.println("It is not a prime number ");
+            int count=0;
+        for(int i=2;i*i<=n;i++){
+            if(n!=i && n%i==0 && n%i*i==0){
+                System.out.println("It is not a prime number ");
+            }
+            
+        }
+        if(count==0){
+            System.out.println("it is a prime number ");
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+//method 2
+
+class Main{
+    
+    public static void primeno(int n){
+        if(n==1){
+            System.out.println("not a prime number");
+        }
+        else if(n%2==0||n%3==0)
+        {
+            System.out.println("not a prime number");
+
+        }
+        else{
+            for(int i=5;i<n;i+=6){
+                if(n%i==0){
+                    System.out.println("it not a prime number");
+                }
+            }
+        }
+    }
+    public static void main(String args[]){
+        System.out.println("if it return blank it is a prime no");
+        primeno(12);
+    }
+}
+
