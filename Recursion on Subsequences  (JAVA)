@@ -1,0 +1,27 @@
+ import java.util.*;
+ class Main{
+    public static void main(String args[]){
+        int[] arr={1,2,1};
+        sequence(arr,0,new ArrayList<>(),0);
+    }
+    public static void sequence(int[] a,int i,ArrayList<Integer> L,int sum)
+    {
+        if(i==a.length){
+            if(sum==2){
+            for(int j:L){
+                System.out.print(j+" ");
+            }
+                            System.out.println(" ");
+
+            }
+
+            return;
+
+        }
+        L.add(a[i]);
+        sequence(a,i+1,L,sum+a[i]);
+        L.remove(L.size() - 1);
+        
+        sequence(a,i+1,L,sum);
+    }
+}
