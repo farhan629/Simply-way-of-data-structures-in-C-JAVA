@@ -1,0 +1,23 @@
+ import java.util.*;
+ class Main{
+    public static void main(String args[]){
+        int[] arr={3,2,1};
+        sequence(arr,0,new ArrayList<>());
+    }
+    public static void sequence(int[] a,int i,ArrayList<Integer> L)
+    {
+        if(i>=a.length){
+            for(int j:L){
+                System.out.print(j+" ");
+            }
+            System.out.println(" ");
+
+            return;
+
+        }
+        L.add(a[i]);
+        sequence(a,i+1,L);
+        L.remove(L.size() - 1);
+        sequence(a,i+1,L);
+    }
+}
